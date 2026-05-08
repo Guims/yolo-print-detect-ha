@@ -2,8 +2,6 @@ name: YOLO Print Detector
 slug: yolo_print_detect_ha
 version: "1.0.0"
 
-description: "Local AI failure detection for 3D printing (Neptune 4 Pro)"
-
 startup: services
 boot: auto
 init: false
@@ -17,4 +15,4 @@ ports:
 
 webui: "http://[HOST]:[PORT:5001]"
 
-image: ghcr.io/guims/yolo-print-detect-ha-{arch}
+build: .
