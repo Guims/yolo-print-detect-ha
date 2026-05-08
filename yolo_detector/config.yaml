@@ -2,7 +2,7 @@ name: YOLO Print Detector
 version: "1.0.0"
 slug: yolo_print_detector
 
-description: "Detects 3D print failures using YOLO vision AI"
+description: "Local AI failure detection for 3D printing"
 
 startup: services
 boot: auto
