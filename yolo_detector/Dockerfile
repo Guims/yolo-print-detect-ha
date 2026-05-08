@@ -2,6 +2,7 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base:15.0.7
 FROM ${BUILD_FROM}
 
 ENV PYTHONUNBUFFERED=1
+ENV LANG=C.UTF-8
 
 RUN apk add --no-cache \
     python3 \
@@ -12,8 +13,11 @@ RUN apk add --no-cache \
 WORKDIR /app
 
 COPY requirements.txt .
-RUN pip3 install -r requirements.txt
+RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY app /app
+COPY rootfs /
 
-CMD ["/init"]
+RUN chmod -R a+x /etc/services.d
+
+EXPOSE 5001
