@@ -1,8 +1,8 @@
 name: YOLO Print Detector
-version: "1.0.0"
 slug: yolo_print_detect_ha
+version: "1.0.0"
 
-description: "Local AI failure detection for 3D printing"
+description: "Local AI failure detection for 3D printing (Neptune 4 Pro)"
 
 startup: services
 boot: auto
@@ -17,10 +17,4 @@ ports:
 
 webui: "http://[HOST]:[PORT:5001]"
 
-options:
-  camera_url: "http://homeassistant.local:8123"
-  threshold: 0.65
-
-schema:
-  camera_url: str
-  threshold: float
+image: ghcr.io/guims/yolo-print-detect-ha-{arch}
