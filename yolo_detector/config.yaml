@@ -1,0 +1,26 @@
+name: YOLO Print Detector
+version: "1.0.0"
+slug: yolo_print_detector
+
+description: "Detects 3D print failures using YOLO vision AI"
+
+startup: services
+boot: auto
+init: false
+
+arch:
+  - aarch64
+  - amd64
+
+ports:
+  5001/tcp: 5001
+
+webui: "http://[HOST]:[PORT:5001]"
+
+options:
+  camera_url: "http://homeassistant.local:8123"
+  threshold: 0.65
+
+schema:
+  camera_url: str
+  threshold: float
